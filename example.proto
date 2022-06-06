@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package helloworld;
+
+message Example {
+    required int32 id = 1;
+    optional int32 i = 2;
+    optional double d = 3;
+    optional bool b = 4 [default = true];
+
+    enum E {
+        E1 = 0;
+        E2 = 1;
+        E3 = 2;
+    }
+
+    message Nested {
+        optional int32 id = 1;
+        optional E e = 2 [default = E1];
+    }
+
+    repeated Nested r = 5;
+}
